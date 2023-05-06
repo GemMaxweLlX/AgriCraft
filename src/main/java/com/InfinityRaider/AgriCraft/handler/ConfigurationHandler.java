@@ -125,7 +125,7 @@ public class ConfigurationHandler {
 
         condenseCustomWoodInNei = config.getBoolean("condense custom wood blocks in NEI", Categories.CATEGORY_CLIENT, true, "set to true to condense all entries for custom wood blocks into one entry in NEI");
         disableParticles = config.getBoolean("Disable particles", Categories.CATEGORY_CLIENT, false, "set to true to disable particles for the sprinklers");
-        statDisplay = config.getString("Stat Display", Categories.CATEGORY_CLIENT, "NUMBER", "This defines how to display the stats of plants. Possible settings are 'NUMBER': just display a simple number (ex: \"6\"), 'FRACTION': number/maximum (ex: \"6/10\"), 'CHARACTER-'char'': number of characters equal to the stats (ex: CHARACTER-• will give \"••••••\") and 'KEYWORD-'type'-'keyword'': keyword followed by the type and then the stat, type is any of the previous types (ex: KEYWORD-FRACTION-Rank will give \"Rank: 6/10\") . Invalid entries will default to NUMBER ");
+        statDisplay = config.getString("Stat Display", Categories.CATEGORY_CLIENT, "NUMBER", "This defines how to display the stats of plants. Possible settings are 'NUMBER': just display a simple number (ex: \"6\"), 'FRACTION': number/maximum (ex: \"6/10\"), 'CHARACTER-'char'': number of characters equal to the stats (ex: CHARACTER-â€¢ will give \"â€¢â€¢â€¢â€¢â€¢â€¢\") and 'KEYWORD-'type'-'keyword'': keyword followed by the type and then the stat, type is any of the previous types (ex: KEYWORD-FRACTION-Rank will give \"Rank: 6/10\") . Invalid entries will default to NUMBER ");
         disableSounds = config.getBoolean("Disable sounds", Categories.CATEGORY_CLIENT, false, "Set to true to disable sounds.");
 
         if(config.hasChanged()) {config.save();}
@@ -137,7 +137,7 @@ public class ConfigurationHandler {
         //agricraft
         resourcePlants = config.getBoolean("Resource Crops", Categories.CATEGORY_AGRICRAFT, true, "set to true if you wish to enable resource crops");
         cropsPerCraft = config.getInt("Crops per craft", Categories.CATEGORY_AGRICRAFT, 4, 1, 4, "The number of crops you get per crafting operation");
-        cropStatCap = config.getInt("Crop stat cap", Categories.CATEGORY_AGRICRAFT, 10, 1, 10, "The maximum attainable value of the stats on a crop");
+        cropStatCap = config.getInt("Crop stat cap", Categories.CATEGORY_AGRICRAFT, 10, 1, 64, "The maximum attainable value of the stats on a crop");
         propGenerateDefaults = config.get(Categories.CATEGORY_AGRICRAFT, "GenerateDefaults", false, "set to true to regenerate a default mutations file (will turn back to false afterwards)");
         generateDefaults = propGenerateDefaults.getBoolean();
         customCrops = config.getBoolean("Custom crops", Categories.CATEGORY_AGRICRAFT, false, "set to true if you wish to create your own crops");
